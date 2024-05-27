@@ -5,60 +5,62 @@ body {
     padding: 0;
   }
   
-  /* Header and Navigation */
-  header {
+  .sidebar {
+    width: 200px;
+    height: 100vh;
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+  .logo {
+      padding: 20px;
+      text-align: center;
   }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+
   nav ul {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
   }
-  
-  nav ul li {
-    margin-left: 20px;
-  }
-  
+
   nav ul li a {
-    color: #fff;
-    text-decoration: none;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 20px;
+      transition: background-color 0.3s;
   }
-  
+
+  nav ul li a:hover {
+      background-color: #555;
+  }
+
+
   /* Main Content */
-  main {
+  .main-content {
+    margin-left: 200px;
     padding: 40px;
   }
-  
+
   .hero {
     text-align: center;
     margin-bottom: 40px;
   }
-  
+
   .hero h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    margin-top: 0px;
   }
-  
+
   .hero p {
     font-size: 18px;
     margin-bottom: 30px;
   }
-  
+
   .hero .cta {
     background-color: #4CAF50;
     color: #fff;
@@ -67,24 +69,118 @@ body {
     font-size: 16px;
     cursor: pointer;
   }
-  
+
   .features h2,
   .about h2 {
     font-size: 24px;
     margin-bottom: 20px;
   }
-  
+
   .features ul {
     list-style-type: disc;
     padding-left: 20px;
   }
-  
+
   .features li,
   .about p {
     font-size: 16px;
     line-height: 1.5;
   }
-  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    padding-left: 200px;
+    text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+      margin: auto;
+    }
+
+    .dashboard-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    }
+
+    .dashboard-item {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    }
+
+    .expiration-calendar {
+    width: 100%;
+    border-collapse: collapse;
+    }
+
+    .expiration-calendar th, .expiration-calendar td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    }
+
+    .expiration-calendar th {
+    background-color: #4CAF50;
+    color: white;
+    }
+
+    .add-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    }
+
+    .add-item input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    }
+
+    .add-item button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    }.container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+  }
+
+  .notifications-panel {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: auto;
+      background-color: #f5f5f5;
+  }
+
+  .notifications-list {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  .notification {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: auto;
+  }
+
+  .notification.expired {
+      background-color: #ffcdd2;
+      color: #c63737;
+  }
+
+  .notification.warning {
+      background-color: #fff9c4;
+      color: #856404;
+  }
+
   /* Footer */
   footer {
     background-color: #333;
