@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Expiry Alerts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
+    <!--<script src="script.js"></script> -->
 </head>
 <body>
-  <header>
-    <h1>Products Expiry Alert</h1>
-</header>
-    <div class="sidebar">
+    <header>
         <div class="logo">
-            <h3>Dashboard</h3>
+            <h1>PEAMS</h1>
         </div>
         <nav>
             <ul>
@@ -22,8 +21,8 @@
                 <li><a href="#">Notifications</a></li>
             </ul>
         </nav>
-    </div>
-    <div class="container">
+    </header>
+
         <div class="notifications-panel">
             <h2>Notifications</h2>
             <ul class="notifications-list">
@@ -35,18 +34,8 @@
     <script>
         // Sample data for product expiry alerts
         const alerts = [
-            {
-                id: 1,
-                product: 'Product A',
-                expiryDate: '2024-06-01',
-                type: 'expired'
-            },
-            {
-                id: 2,
-                product: 'Product B',
-                expiryDate: '2024-05-30',
-                type: 'warning'
-            },
+            { id: 1, product: 'Product A', expiryDate: '2024-06-01', type: 'expired' },
+            { id: 2, product: 'Product B', expiryDate: '2024-05-30', type: 'warning' },
             // Add more alerts as needed
         ];
 
@@ -62,6 +51,5 @@
         // Render notifications
         alerts.forEach(alert => renderNotification(alert));
     </script>
-    
 </body>
 </html>
