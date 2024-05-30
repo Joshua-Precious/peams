@@ -15,21 +15,18 @@
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="#">Products</a></li>
+                <li><a href="product.html">Products</a></li>
                 <li><a href="#">Tracker</a></li>
                 <li><a href="notify.html">Notifications</a></li>
             </ul>
         </nav>
     </header>
-
     <div class="main-content">
         <h1>Expiration Date Tracker</h1>
-
         <div class="add-item">
-            <input type="text" id="new-item-input" placeholder="Add new item">
-            <button onclick="addNewItem()">Add</button>
+            <input type="text" id="searchInput" placeholder="Search here..." onkeydown="if (event.keyCode === 13) searchCalendarEntries()">
+            <button onclick="searchCalendarEntries()">Search</button>
         </div>
-
         <div class="dashboard-summary">
             <div class="dashboard-item">
                 <h3>Expiring Soon</h3>
@@ -44,7 +41,6 @@
                 <p id="notifications">0</p>
             </div>
         </div>
-
         <h2>Expiration Calendar</h2>
         <table class="expiration-calendar">
             <thead>
@@ -59,13 +55,16 @@
             </tbody>
         </table>
     </div>
-
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2023 PEAMS. All rights reserved.</p>
     </footer>
-
     <script>
-        // JavaScript code goes here
         const expiringTodayCount = 5;
         const expiredCount = 2;
         const notificationsCount = 3;
@@ -78,38 +77,67 @@
         // Add sample calendar entries
         const calendarBody = document.getElementById('calendar-body');
         const sampleEntries = [
-            { date: '2023-06-15', item: 'Milk', expiration: '2023-06-30' },
+            { date: '2023-06-15', item: 'Peak Milk', expiration: '2023-06-30' },
             { date: '2023-07-01', item: 'Eggs', expiration: '2023-07-15' },
+            { date: '2023-08-01', item: 'Milo', expiration: '2023-08-31' },
+            { date: '2023-07-01', item: 'Chicken', expiration: '2023-07-15' },
+            { date: '2023-08-01', item: 'Milo', expiration: '2023-08-31' },
+            { date: '2023-07-01', item: 'Coffee', expiration: '2023-07-15' },
+            { date: '2023-08-01', item: 'Meat', expiration: '2023-08-31' },
+            { date: '2023-07-01', item: 'Indomie', expiration: '2023-07-15' },
+            { date: '2023-08-01', item: 'Dettol Soap', expiration: '2023-08-31' },
+            { date: '2023-07-01', item: 'Good mama', expiration: '2023-07-15' },
+            { date: '2023-08-01', item: 'Superbite', expiration: '2023-08-31' },
+            { date: '2023-07-01', item: 'Coco pops', expiration: '2023-07-15' },
+            { date: '2023-08-01', item: 'Cornflakes', expiration: '2023-08-31' },
+            { date: '2023-07-01', item: 'Cream Crackers', expiration: '2023-07-15' },
             { date: '2023-08-01', item: 'Cheese', expiration: '2023-08-31' }
         ];
 
         sampleEntries.forEach(entry => {
-            addCalendarEntry(entry.date, entry.item, entry.expiration);
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.date}</td>
+                <td>${entry.item}</td>
+                <td>${entry.expiration}</td>
+            `;
+            calendarBody.appendChild(row);
         });
 
-        function addNewItem() {
-            const newItemInput = document.getElementById('new-item-input');
-            const newItem = newItemInput.value.trim();
-            if (newItem) {
-                const expirationDate = prompt('Enter the expiration date (YYYY-MM-DD):');
-                addCalendarEntry(getCurrentDate(), newItem, expirationDate);
-                newItemInput.value = '';
+        // Get the modal and modal message elements
+        const modal = document.getElementById("myModal");
+        const modalMessage = document.getElementById("modalMessage");
+
+        // Get the <span> element that closes the modal
+        const span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the close button, close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
 
-        function addCalendarEntry(date, item, expiration) {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${date}</td>
-                <td>${item}</td>
-                <td>${expiration}</td>
-            `;
-            calendarBody.appendChild(row);
-        }
+        function searchCalendarEntries() {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.trim().toLowerCase();
 
-        function getCurrentDate() {
-            const today = new Date();
-            return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+            if (searchTerm) {
+                const foundEntry = sampleEntries.find(entry => entry.item.toLowerCase().includes(searchTerm));
+
+                if (foundEntry) {
+                    modalMessage.textContent = `Found entry: ${foundEntry.item} (Expiration: ${foundEntry.expiration})`;
+                    modal.style.display = "block";
+                } else {
+                    modalMessage.textContent = "No matching entry found.";
+                    modal.style.display = "block";
+                }
+            }
         }
     </script>
 </body>

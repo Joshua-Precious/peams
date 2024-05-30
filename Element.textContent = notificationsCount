@@ -1,0 +1,72 @@
+[33mcommit 6984a37eb5b46ad039f6f504883d3fbd4827e375[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Joshua-Precious <pcjosh00@gmal.com>
+Date:   Tue May 28 09:15:11 2024 +0100
+
+    Changed the layout
+
+[33mcommit bebb6b426c11fb7f071f1bd08a40c044d93573ba[m[33m ([m[1;31morigin/gh-pages[m[33m, [m[1;32mgh-pages[m[33m)[m
+Merge: 1793fc4 1eef9e5
+Author: Joshua-Precious <pcjosh00@gmal.com>
+Date:   Mon May 27 11:13:49 2024 +0100
+
+    Merge branch 'gh-pages' of https://github.com/Joshua-Precious/peams into gh-pages
+
+[33mcommit 1793fc48e6f2d1610dc555f4c8b81a8c52b3f03f[m
+Author: Joshua-Precious <pcjosh00@gmal.com>
+Date:   Mon May 27 11:06:09 2024 +0100
+
+    Added some new features
+
+[33mcommit 1eef9e5d7667662618f48156f484dfb17300cdf5[m
+Author: mr_jay <104897438+Joshua-Precious@users.noreply.github.com>
+Date:   Fri May 24 15:11:31 2024 +0100
+
+    Delete CNAME
+
+[33mcommit b63639e8cab180b4ecdd7eaa8421f3e3e670b6b4[m
+Author: mr_jay <104897438+Joshua-Precious@users.noreply.github.com>
+Date:   Fri May 24 15:11:14 2024 +0100
+
+    Update CNAME
+
+[33mcommit 477d70193877bb30d28dceaa81700cc7e1618299[m
+Author: mr_jay <104897438+Joshua-Precious@users.noreply.github.com>
+Date:   Fri May 24 15:10:12 2024 +0100
+
+    Create CNAME
+
+[33mcommit cea6051d3c5aa560192e562fd38484144187d1b1[m
+Author: Joshua-Precious <pcjosh00@gmal.com>
+Date:   Fri May 24 14:47:22 2024 +0100
+
+    made a few more changes in all the files
+
+[33mcommit dd44ca556d73e3d3458931ce0e1f85f049605e8d[m
+Author: Joshua-Precious <pcjosh00@gmal.com>
+Date:   Thu May 23 12:45:44 2024 +0100
+
+    made a few changes in all the files
+
+[33mcommit b193dfa63e79d36426657e18ccd73b7c26f6d65f[m
+Author: Joshua-Precious <pcjosh00@gmal.com>
+Date:   Thu May 23 12:24:44 2024 +0100
+
+    Initial commit
+
+[33mcommit 98ff8b4e1cbadbca2483ef5b8a9e4ae4e4b5aae5[m
+Author: mr_jay <104897438+Joshua-Precious@users.noreply.github.com>
+Date:   Thu May 23 12:21:17 2024 +0100
+
+    Create try.css
+
+[33mcommit 1b0e3c30473fb6b8841d82cfd3690dab43e64ee7[m
+Author: mr_jay <104897438+Joshua-Precious@users.noreply.github.com>
+Date:   Thu May 23 12:20:30 2024 +0100
+
+    Create README.md
+
+[33mcommit 6bd0d6af5d12a81e98132853ac851ad1f1cf09c6[m
+Author: Joshua-Precious <pcjosh00@gmal.com>
+Date:   Thu May 23 12:16:08 2024 +0100
+
+    Initial commit
