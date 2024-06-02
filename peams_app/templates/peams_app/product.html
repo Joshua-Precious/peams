@@ -1,0 +1,54 @@
+{% extends 'peams_app/layout.html' %}
+{% load static %}
+
+{% block title%}
+    <title>Products</title>
+{% endblock%}
+
+{% block body %}
+    <div class="maiin-content">
+        <div class="product-container">
+            <form class="add-item" action="{% url 'products' %}" method="post">
+                {% csrf_token %}
+                <input type="text" id="new-item-input" name="product" placeholder="Add new Product">
+                <input type="text" name="expiry" placeholder="Expiry (yr-m-d)">
+                <button id="addItemBtn">Add</button>
+            </form>
+            <h2>Product Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Date Added</th>
+                        <th>Expiry Date</th>
+                        <th>Batch No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.date_added }}</td>
+                            <td>{{ product.expiry_date }}</td>
+                            <td>{{ product.batch_no }}</td>
+                            <td><a href="{% url 'delete-product' product.batch_no %}"><button>delete</button></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!-- <div>
+                <h3>Inventory Tracking</h3>
+                <canvas id="inventoryChart" width="800" height="400"></canvas>
+            </div> -->
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+        <script src="{% static 'peams_app/tracker.js' %}"></script>
+{% endblock %}
+</body>
+</html>
+        
+
